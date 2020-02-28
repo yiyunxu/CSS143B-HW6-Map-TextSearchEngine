@@ -11,8 +11,8 @@ public class MyMiniSearchEngine {
     private MyMiniSearchEngine() {
     }
 
-    public MyMiniSearchEngine(List<String> texts) {
-        index(texts);
+    public MyMiniSearchEngine(List<String> documents) {
+        index(documents);
     }
 
     // each item in the List is considered a document.
