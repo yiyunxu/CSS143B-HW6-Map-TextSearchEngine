@@ -11,6 +11,7 @@
 - Make changes and commits as needed
 - Once done, send the repo url through canvas
 - DO NOT MAKE UPDATE TO YOUR REPO **AFTER** DUE DATE OR ZERO POINT IS GIVEN
+- Also like what you did for the quiz, your submission repo should only contain .java files and .jar files. Points will be taken if other files appear.
 
 ## Design and Implement a mini text search engine (100pt)
 
