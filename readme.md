@@ -5,11 +5,12 @@
     - Assigned: 2/27/2020
     - Due: 3/4/2020 Wednesday 11:59pm
 
-### Submission 
+### Work and Submission 
 
-- Put your solutions (all .java) into a folder.
-- Zip this folder into a single file and submit through canvas. 
-- The naming format is used for grading script and you will receive **ZERO** point if this is not followed.
+- Check out this repo to your own repo (much like what you did for the quiz)
+- Make changes and commits as needed
+- Once done, send the repo url through canvas
+- DO NOT MAKE UPDATE TO YOUR REPO **AFTER** DUE DATE OR ZERO POINT IS GIVEN
 
 ## Design and Implement a mini text search engine (100pt)
 
@@ -17,12 +18,13 @@ Ready to take on google yet? Well, let's give it a try.
 
 ### TL;DR
 
-- write index() and search()
-- index(...) takes a list of strings and generate indexes
-- search(...) finds single word as well as phrase of words
-- must pass provided tests
+- write index(List<String> documents) and search(String phrase)
+- index(List<String> documents) takes a list of strings (each string called a document) and generates indexes
+- search(String phrase) returns which documents (document id) the phrase appears in. Phrase can contain more than one words.
+- search(String phrase) only works with full words
+- this search engine ignore cases
 - do not use string comparison to scan each doc to do search
-- suggestive reading/idea [here](http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/) and [here](http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/). this is also what my solution will be based on
+- suggestive reading/idea [here](http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/) and [here](http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/). this is also what my solution will be based on.
 
 ### The Idea
 
@@ -35,11 +37,24 @@ This project will produce a text search engine that can search a single word or 
  - document 4: "seattle rains hello abc world"
  - document 5: "sunday hello world fun"
 
-Search(...) only works with words. For example, with the above documents, search("llo wor") will return [] even though this string exists in documents 0, and 5.
+search() works with a phrase of words, and it will only match **full words**. Also as a reasonable simplification, this search engine is **case insensitive**.
+
+```java
+    public List<Integer> search(String keyPhrase) {
+        // homework
+        return new ArrayList<>(); // place holder
+    }
+````
+
+For example, with the above documents, search("llo wor") will return [] even though this string exists in documents 0, and 5.
 
 Each document is represented by a string in the code. 
 
-The search engine works by firstly cleaning up data (removing non-alphabetical character) and generating indexes from all the documents. Indexing collects, parses, and stores data to facilitate fast and accurate search. Once indexes are generate, text keywords can be searched by calling 
+The search engine works by firstly generating indexes from given documents. Indexing collects, parses, and stores data to facilitate fast search. Once indexes are generate, text keywords can be searched by calling 
+
+```java
+search(String keyPhrase)
+```
 
 This function returns a vector of document Id that contains the searched term. For example:
 
@@ -48,11 +63,11 @@ This function returns a vector of document Id that contains the searched term. F
 - search("hello world") --> \[0, 5\]
 - search("bothell") --> \[\]
 
-Here the number in the result vector are document id, 0 to 5 for the documents example above. 
+Here the number in the result list are document id, 0 to 5 for the documents example above. 
 
-Note that this search engine is not case sensitive. All words in the documents will be converted to lower case and search will be conducted also in lower case. And non-alphabetical character will be removed. Utility functions for these purpose are already provided in the code. 
+Because this search engine is not case sensitive, all words in the documents will be converted to lower case and search will be conducted also in lower case. 
 
-Also note that a phrase kehyword like "hello world" only matches documents that have this phase as a whole, here 0, and 5. Document 3 has both "hello" and "world" but in the opposite order, so it is not a match. 
+Also note that a phrase kehyword like "hello world" only matches documents that have this phase as a phrase, not by single word, e.g. here documents 0, and 5. Document 3 contains both "hello" and "world" but in the opposite order, so it is not a match. 
 
 ### The Cogs
 
