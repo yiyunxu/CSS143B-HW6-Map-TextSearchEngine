@@ -17,6 +17,8 @@
 
 Ready to take on google yet? Well, let's give it a try.
 
+Finish the design, code and required tests.
+
 ### TL;DR
 
 - write index(List<String> documents) and search(String phrase)
@@ -25,7 +27,7 @@ Ready to take on google yet? Well, let's give it a try.
 - search(String phrase) only works with full words
 - this search engine ignore cases
 - do not use string comparison to scan each doc to do search
-- suggestive reading/idea [here](http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/) and [here](http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/). this is also what my solution will be based on.
+- suggestive reading/idea [here](http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/) and [here](http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/). this is also what my solution will be based on
 
 ### The Idea
 
