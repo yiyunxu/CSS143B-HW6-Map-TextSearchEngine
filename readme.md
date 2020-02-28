@@ -3,7 +3,7 @@
 ### Basic Info
 
     - Assigned: 2/27/2020
-    - Due: 3/4/2020 Wednesday 11:59pm
+    - Due: 3/5/2020 Thursday 11:59pm
 
 ### Work and Submission 
 
